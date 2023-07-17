@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>2. Attribute Binding - learn</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="main2.css.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="product">
+                <div class="product-image">
+                    <img :src="image" alt="">
+                    <!-- <img v-bind:src="image" alt=""> -->
+                </div>
+                <div class="product-info">
+                    <h1>
+                        {{ product }}
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <script>
+            var app = new Vue({
+                el : '#app',
+                data : {
+                    product : 'socks',
+                    image : 'assets/one.jpg'
+                }
+            });
+        </script>
+    </body>
+</html>
