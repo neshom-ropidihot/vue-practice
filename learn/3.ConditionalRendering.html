@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>3. Conditional Rendering - learn</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="./assets/main.css">
+    </head>
+    <body>
+        <div id="app">
+            <div class="product">
+
+                <div class="product-image">
+                    <img :src="image" alt="">
+                    <!-- <img v-bind:src="image" alt=""> -->
+                </div>
+
+                <!-- <div class="product-info">
+                    <h1>
+                        {{ product }}
+                    </h1>
+                    <p v-if="inStock">
+                        in stock
+                    </p>
+                    <p v-else>
+                        out of stock
+                    </p>
+                </div> -->
+
+                <!-- <div class="product-info">
+                    <h1>
+                        {{ product }}
+                    </h1>
+                    <p v-if="inventory > 10">
+                        in stock
+                    </p>
+                    <p v-else-if="inventory <= 10 && inventory > 0">
+                        allmost sold out
+                    </p>
+                    <p v-else>
+                        out of stock
+                    </p>
+                </div> -->
+
+
+                <div class="product-info">
+                    <h1>
+                        {{ product }}
+                    </h1>
+                    <p v-show="inStock">
+                        in stock
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="./assets/main.js"></script>
+        
+    </body>
+</html>
