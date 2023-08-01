@@ -184,3 +184,14 @@ var todolistexample = new Vue({
     },
   },
 });
+
+// 3.conditional
+
+var oneCondition = new Vue({
+  el: "#one-condition",
+  data : {
+    awesome : true,
+    type: 'A',
+    ok : true
+  }
+});
