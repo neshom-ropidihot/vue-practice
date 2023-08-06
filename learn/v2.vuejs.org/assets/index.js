@@ -195,3 +195,39 @@ var oneCondition = new Vue({
     ok : true
   }
 });
+
+
+// 4.Class and Style Bindings
+
+var oneClass = new Vue({
+  el: "#one-class",
+  data: {
+    isActive: true,
+    hasError : false,
+  },
+});
+
+var twoClass = new Vue({
+  el: "#two-class",
+  data: {
+    classObject: {
+      isActive: true,
+      "text-danger": false,
+    },
+    activeClass: "active1",
+    errorClass: "error1",
+    isActive: true,
+  },
+});
+
+var threeClass = new Vue({
+  el: "#three-class",
+  data: {
+    color: "red",
+    fontSize : 20,  
+    styleObject : {
+      color : 'blue',
+      fontSize : '100px',
+    }
+  },
+});

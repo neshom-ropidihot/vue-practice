@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>4.Class and Style Bindings - learn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+
+    <div id="one-class">
+      <div class="box" :class="{active : isActive, 'text-danger' : hasError }">
+        test
+      </div>
+    </div>
+
+    <div id="two-class">
+      <div class="box" :class="classObject">
+        test
+      </div>
+      <h1 :class="[activeClass, errorClass]">
+        test1
+      </h1>
+      <h2 :class="[isActive ? activeClass : '', errorClass]">
+        test2
+      </h2>
+    </div>
+    <div id="three-class">
+      <p :style="{backgroundColor:color, 'font-size':fontSize + 'px'}">
+        text
+      </p>
+      <p :style="styleObject">
+        more text
+      </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="./assets/index.js"></script>
+  </body>
+</html>
