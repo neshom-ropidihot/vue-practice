@@ -13,10 +13,10 @@ var app2 = new Vue({
 });
 
 var app3 = new Vue({
-    el : '#app-3',
-    data : {
-        seen : true,
-    }
+  el: "#app-3",
+  data: {
+    seen: true,
+  },
 });
 
 var app4 = new Vue({
@@ -43,17 +43,15 @@ var app5 = new Vue({
 });
 
 var app6 = new Vue({
-  el : '#app-6',
-  data : {
-    message : 'Hello Vue Js !'
-  }
+  el: "#app-6",
+  data: {
+    message: "Hello Vue Js !",
+  },
 });
-
 
 // Vue.component('todo-item', {
 // template : '<li>This is a todo</li>'
 // });
-
 
 Vue.component("todo-item", {
   props: ["todo"],
@@ -71,7 +69,6 @@ var app7 = new Vue({
   },
 });
 
-
 // 2.List Rendering
 
 var example1 = new Vue({
@@ -82,14 +79,11 @@ var example1 = new Vue({
 });
 
 var example2 = new Vue({
-  el : '#example-2',
-  data : {
-    parentMessage : 'parent',
-    items : [
-      { message : 'foo'},
-      { message : 'bar'}
-    ]
-  }
+  el: "#example-2",
+  data: {
+    parentMessage: "parent",
+    items: [{ message: "foo" }, { message: "bar" }],
+  },
 });
 
 var vforobject = new Vue({
@@ -109,36 +103,34 @@ var evenNumber = new Vue({
     numbers: [1, 2, 3, 4, 5],
   },
   computed: {
-    evenNumbers : function() {
-      return this.numbers.filter(function(num) {
-        return num % 2 === 0
-      })
-    }
+    evenNumbers: function () {
+      return this.numbers.filter(function (num) {
+        return num % 2 === 0;
+      });
+    },
   },
 });
 
 var evenNumber2 = new Vue({
   el: "#even-number-2",
-  data : {
+  data: {
     sets: [
-      [1,2,3,4,5],
-      [6,7,8,9,10],
+      [1, 2, 3, 4, 5],
+      [6, 7, 8, 9, 10],
     ],
   },
-  methods : {
-    even : function(number) {
-      return number.filter(function(n) {
-        return n % 2 === 0
+  methods: {
+    even: function (number) {
+      return number.filter(function (n) {
+        return n % 2 === 0;
       });
-    }
-  }
+    },
+  },
 });
 
-var range = new Vue ({
-  el : '#range',
-  
+var range = new Vue({
+  el: "#range",
 });
-
 
 Vue.component("todo-item", {
   template:
@@ -174,13 +166,11 @@ var todolistexample = new Vue({
   },
   methods: {
     addNewTodo: function () {
-
       this.todos.push({
         id: this.nextTodoId++,
         title: this.newTodoText,
       });
       this.newTodoText = "";
-      
     },
   },
 });
@@ -189,13 +179,12 @@ var todolistexample = new Vue({
 
 var oneCondition = new Vue({
   el: "#one-condition",
-  data : {
-    awesome : true,
-    type: 'A',
-    ok : true
-  }
+  data: {
+    awesome: true,
+    type: "A",
+    ok: true,
+  },
 });
-
 
 // 4.Class and Style Bindings
 
@@ -203,7 +192,7 @@ var oneClass = new Vue({
   el: "#one-class",
   data: {
     isActive: true,
-    hasError : false,
+    hasError: false,
   },
 });
 
@@ -224,10 +213,43 @@ var threeClass = new Vue({
   el: "#three-class",
   data: {
     color: "red",
-    fontSize : 20,  
-    styleObject : {
-      color : 'blue',
-      fontSize : '100px',
-    }
+    fontSize: 20,
+    styleObject: {
+      color: "blue",
+      fontSize: "100px",
+    },
+  },
+});
+
+// 5.Computed Properties and Watchers
+
+var example = new Vue({
+  el: "#example",
+  data: {
+    message: "Hello Vue!",
+    firstName: "Foo",
+    lastName: "Bar",
+  },
+  computed: {
+    reversedMessage() {
+      return this.message.split("").reverse().join("");
+    },
+    fullName: {
+      // getter
+      get: function () {
+        return this.firstName + " " + this.lastName;
+      },
+      // setter
+      set: function (newValue) {
+        var names = newValue.split(" ");
+        this.firstName = names[0];
+        this.lastName = names[names.length - 1];
+      },
+    },
+  },
+  methods: {
+    reversedMessageMethods() {
+      return this.message.split("").reverse().join("");
+    },
   },
 });

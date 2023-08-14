@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>5.Computed Properties and Watchers - learn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="example">
+      <p>
+        {{ message.split('')}}
+      </p>
+      <p>
+        {{ message.split('').reverse()}}
+      </p>
+      <p>
+        {{ message.split('').reverse().join('')}}
+      </p>
+
+      <p>
+        original message: {{ message }}
+      </p>
+      <p>
+        computed reversed message: {{ reversedMessage}}
+      </p>
+      <p>
+        methods reversed Message : {{ reversedMessageMethods() }}
+      </p>
+      <p> fullName: {{ fullName }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="./assets/index.js"></script>
+  </body>
+</html>
