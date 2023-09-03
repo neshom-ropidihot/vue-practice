@@ -253,3 +253,109 @@ var example = new Vue({
     },
   },
 });
+
+// 6.ComponentsBasics
+Vue.component("click-counter", {
+  template: `
+  <button @click="count++"> clicked me {{ count }} </button>
+  `,
+  data() {
+    return {
+      count: 0,
+    };
+  },
+});
+
+Vue.component("click-counter2", {
+  template: `#click-counter22`,
+  data() {
+    return {
+      count: 0,
+    };
+  },
+});
+var component1 = new Vue({
+  el: "#component-1",
+});
+var component2 = new Vue({
+  el: "#component-2",
+});
+
+Vue.component("blog-post", {
+  props: ["title"],
+  template: `<h3> {{ title }} </h3>`,
+});
+Vue.component3 = new Vue({
+  el: "#component-3",
+  data: {
+    posts: [
+      { id: 1, title: "My journey with Vue" },
+      { id: 2, title: "Blogging with Vue" },
+      { id: 3, title: "Why Vue is so fun" },
+    ],
+  },
+});
+
+Vue.component("blog-post-1", {
+  props: ["post"],
+  template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+        <button v-on:click="$emit('enlarge-text', 0.1)">
+          Enlarge text
+      </button>
+      <div v-html="post.content"></div>
+    </div>
+  `,
+});
+
+var component4 = new Vue({
+  el: "#component-4",
+  data: {
+    posts: [
+      { id: 1, title: "My journey with Vue" },
+      { id: 2, title: "Blogging with Vue" },
+      { id: 3, title: "Why Vue is so fun" },
+    ],
+    postFontSize: 1,
+  },
+  methods: {
+    onEnlargeText(size) {
+      this.postFontSize += size;
+    },
+  },
+});
+
+Vue.component("box", {
+  template: `
+  <div>
+  Error!: 
+  <slot></slot>
+  </div>`,
+});
+var component5 = new Vue({
+  el: "#component-5",
+});
+
+Vue.component("tab-home", {
+  template:  `<div>Home component</div>`,
+});
+Vue.component("tab-posts", {
+  template: `<div>Posts component</div>`,
+});
+Vue.component("tab-archive", {
+  template: `<div>Archive component</div>`,
+});
+
+var component6 = new Vue({
+  el: "#component-6",
+  data: {
+    currentTab: "Home",
+    tabs: ["Home", "Posts", "Archive"],
+  },
+  computed: {
+    currentTabComponent() {
+      return "tab-" + this.currentTab.toLowerCase();
+    },
+  },
+});

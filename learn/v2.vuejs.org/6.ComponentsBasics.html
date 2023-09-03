@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>6 - Components Basics - learn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="component-1">
+      <click-counter></click-counter>
+      <click-counter></click-counter>
+    </div>
+    <div id="component-2">
+      <click-counter2></click-counter2>
+    </div>
+    <div id="component-3">
+      <blog-post title="My journey with Vue"></blog-post>
+      <blog-post title="Blogging with Vue"></blog-post>
+      <blog-post title="Why Vue is so fun"></blog-post>
+      <blog-post
+        v-for="post in posts"
+        :key="post.id"
+        :title="post.title"
+      ></blog-post>
+    </div>
+    <div id="component-4">
+      <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post-1
+          v-for="post in posts"
+          :post="post"
+          v-on:enlarge-text="onEnlargeText"
+        ></blog-post-1>
+      </div>
+    </div>
+<div id="component-5">
+  <box>
+      Something bad happened.
+  </box>
+</div>
+<div id="component-6">
+  <button v-for="tab in tabs" :key="tab" @click="currentTab = tab">
+    {{ tab }}
+  </button>
+  <content :is="currentTabComponent"></content>
+</div>
+    <script type="text/x-template" id="click-counter22">
+      <button @click="count++"> {{ count}}</button>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="./assets/index.js"></script>
+  </body>
+</html>
