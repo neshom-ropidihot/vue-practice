@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>2.ReusableComponentswithProps - learn</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    </head>
+    <body>
+        
+        <div id="app">
+            <plan v-for="plan in plans" :name="plan"></plan>
+
+            
+        </div>
+        <script type="text/x-template" id="plan-template">
+            <div>
+                {{ name }}
+            </div>
+        </script>
+
+        <script src="assets/2.js"></script>
+    </body>
+</html>
